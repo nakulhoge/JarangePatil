@@ -1,0 +1,13 @@
+
+  .modal-body img {
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+   
+  }
+  
+  .modal-body p {
+    margin-top: 20px; /* Add space between the image and the paragraph */
+  }
+  
+  
+ 
