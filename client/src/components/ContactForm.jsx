@@ -1,15 +1,43 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import toastify CSS
 
 const Contact = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here (e.g., send data to a server)
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  });
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setContactForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:5000/contactform", contactForm);
+      toast.success('Form submitted successfully!');
+      setContactForm({
+        name: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error('Failed to submit the form.');
+    }
   };
 
   return (
     <Container className="contact-container">
       <Row className="justify-content-center align-items-center min-vh-100">
+      <ToastContainer />
         <Col md={8} lg={6} className="p-4 rounded shadow">
           <h1 className="text-center mb-4">Contact Us</h1>
           <Form onSubmit={handleSubmit}>
@@ -19,6 +47,9 @@ const Contact = () => {
                 type="text"
                 placeholder="Enter your name"
                 name="name"
+                value={contactForm.name}
+                onChange={handleInputChange}
+                aria-label="Name"
                 required
               />
             </Form.Group>
@@ -29,6 +60,9 @@ const Contact = () => {
                 type="email"
                 placeholder="Enter your email"
                 name="email"
+                value={contactForm.email}
+                onChange={handleInputChange}
+                aria-label="Email"
                 required
               />
             </Form.Group>
@@ -39,6 +73,9 @@ const Contact = () => {
                 type="text"
                 placeholder="Enter your phone number"
                 name="phoneNumber"
+                value={contactForm.phoneNumber}
+                onChange={handleInputChange}
+                aria-label="Phone Number"
                 required
               />
             </Form.Group>
@@ -50,6 +87,9 @@ const Contact = () => {
                 rows={4}
                 placeholder="Enter your message"
                 name="message"
+                value={contactForm.message}
+                onChange={handleInputChange}
+                aria-label="Message"
                 required
               />
             </Form.Group>

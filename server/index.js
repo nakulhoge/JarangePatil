@@ -5,6 +5,7 @@ const path = require('path');
 const cors = require('cors'); // Ensure you have cors installed
 const User = require('./models/User');
 const connectDb = require('./utils/db');
+const Contact = require('./models/Contact');
 
 const app = express();
 
@@ -37,6 +38,24 @@ app.post('/submit-form', async (req, res) => {
       res.status(500).send('Server Error');
     }
   });
+
+  app.post('/contactform',async(req,res)=>{
+    const{name,email,phoneNumber,message}=req.body
+    try{
+      const newContact = new Contact({
+        name,
+        email,
+        phoneNumber,
+        message
+      });
+      await newContact.save();
+      res.status(201).send('form submit successfully')
+
+    }catch(error){
+      console.error('Error saving form data:', error);
+      res.status(500).send('Server Error');
+    }
+  })
 
 const port = process.env.PORT || 3000;
 

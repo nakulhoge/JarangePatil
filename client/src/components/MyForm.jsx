@@ -54,7 +54,7 @@ const MyForm = () => {
   return (
     <Container className="my-5">
       <Row className="justify-content-center">
-        <Col md={10} lg={8} className="bg-light p-4 rounded border">
+        <Col md={10} lg={8} className="p-4 rounded shadow">
           <Form onSubmit={handleSubmit}>
             <Form.Group as={Row} controlId="name" className="mb-3">
               <Form.Label column sm={4} md={3}>नाव:</Form.Label>

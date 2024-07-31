@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, NavDropdown, Button, Container } from 'react-bootstrap';
-
-
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import ModalDonation from './ModalDonation';
 
 function NavbarComp() {
-  
   const [showDonationModal, setShowDonationModal] = useState(false);
 
   const handleShowDonation = () => setShowDonationModal(true);
@@ -32,10 +30,16 @@ function NavbarComp() {
                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Nav>
-              <Button variant="outline-primary"  onClick={handleShowDonation}>
+            <Nav className="align-items-center">
+              {/* <Button variant="outline-primary" onClick={handleShowDonation}>
                 Donation
-              </Button>
+              </Button> */}
+              <Nav.Link href="https://www.facebook.com/manojjarangepatil96k?mibextid=ZbWKwL" target="_blank" className="d-flex align-items-center">
+                <FaFacebookF size={20} className="mx-2" />
+              </Nav.Link>
+              <Nav.Link href="https://www.instagram.com/manoj_jarange_patil_96k?igsh=YzhsYmx4NWRqMTRs" target="_blank" className="d-flex align-items-center">
+                <FaInstagram size={20} className="mx-2" />
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

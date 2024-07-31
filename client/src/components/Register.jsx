@@ -1,17 +1,19 @@
 import React from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import MyForm from './MyForm';
+import './Home.css';
 
 
 const Register = () => {
   return (
     <Container className="d-flex justify-content-center align-items-center min-vh-100">
       <Row className="w-100">
-        <Col md={6} lg={4} className="mx-auto">
-          <div className="registerform p-4  rounded shadow">
-            <h1 className="text-center mb-4">
+        <Col md={8} lg={6} className="mx-auto">
+          <div className="registerform p-2  rounded shadow ">
+            <h1 className="text-center mb-4 hover-title">
               " परिस्थिती जेवढी बिकट मराठा तेवढाच तिखट..."
             </h1>
-            <Form>
+            {/* <Form>
               <Form.Group controlId="name">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter your name" required />
@@ -38,7 +40,8 @@ const Register = () => {
             </Form>
             <a href="login" className="d-block text-center mt-3 text-primary">
               Back to Login
-            </a>
+            </a> */}
+            <MyForm/>
           </div>
         </Col>
       </Row>

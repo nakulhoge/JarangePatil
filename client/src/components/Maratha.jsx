@@ -13,7 +13,7 @@ const Maratha= () => {
           <Carousel.Item>
             <div className="d-flex justify-content-center align-items-center" >
               <div className="text-center">
-                <Image src="assets/indexrajyabhishek.jpeg" className="maharaj" alt="maharajrajabhishek" fluid />
+                <Image src="assets/Patil4.jpg" className="maharaj" alt="maharajrajabhishek" fluid />
               </div>
             </div>
           </Carousel.Item>
@@ -21,9 +21,27 @@ const Maratha= () => {
             <div className="d-flex justify-content-center align-items-center" >
               <div className="text-center">
                 <div className="patilmedia">
-                  <Image src="assets/indexrajyabhishek.jpeg" className="patil" alt="patil" fluid />
+                  <Image src="assets/Patil2.jpg" className="patil" alt="patil" fluid />
                 </div>
                 
+              </div>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="d-flex justify-content-center align-items-center" >
+              <div className="text-center">
+                <div className="patilmedia">
+                  <Image src="assets/Patil3.jpg" className="patil" alt="patil" fluid />
+                </div>
+              </div>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="d-flex justify-content-center align-items-center" >
+              <div className="text-center">
+                <div className="patilmedia">
+                  <Image src="assets/Patil1.jpg" className="patil" alt="patil" fluid />
+                </div>
               </div>
             </div>
           </Carousel.Item>

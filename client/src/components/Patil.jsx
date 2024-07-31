@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
-import MyForm from './MyForm';
+
 
 
 const Patil = () => {
@@ -36,7 +36,7 @@ const Patil = () => {
           />
         </Col>
         <Col md={12} lg={6}>
-         <MyForm/>
+       
         </Col>
       </Row>
 

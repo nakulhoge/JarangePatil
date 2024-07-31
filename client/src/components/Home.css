@@ -15,6 +15,13 @@ body {
     
 }
 
+.hover-title {
+    transition: color 0.3s ease; /* Optional: Smooth transition */
+  }
+  
+  .hover-title:hover {
+    color:  orange 
+  }
 
 /* Footer styles */
 footer {
