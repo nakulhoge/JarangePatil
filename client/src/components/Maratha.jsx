@@ -47,7 +47,7 @@ const Maratha= () => {
           </Carousel.Item>
         </Carousel>
       
-              <div className="text-center">
+              <div className="text-center" style={{'background-color': 'orange'}}>
                 <h2>जय शिवराय, मराठा साम्राज्य वेबसाइटवर आपले स्वागत आहे...</h2>
                 <p className="para1">“कोणतेही काम करण्यापूर्वी, त्याच्या परिणामाचा विचार करणे फायदेशीर आहे, कारण आपली भावी पिढी त्याचे पालन करते.”</p>
               </div>

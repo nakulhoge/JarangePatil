@@ -22,7 +22,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:5000/contactform", contactForm);
-      toast.success('Form submitted successfully!');
+      toast.success('धन्यवाद,संपर्क साधल्या बद्दल आम्ही लवकरच यावर आपल्याशी संपर्क करू');
       setContactForm({
         name: "",
         email: "",
@@ -35,11 +35,15 @@ const Contact = () => {
   };
 
   return (
-    <Container className="contact-container">
+    <Container className="contact-container" style={{'marginTop':'-30px'}}>
+      
       <Row className="justify-content-center align-items-center min-vh-100">
       <ToastContainer />
         <Col md={8} lg={6} className="p-4 rounded shadow">
           <h1 className="text-center mb-4">Contact Us</h1>
+          <marquee behavior="scroll" direction="left">
+          जय शिवराय ,ज्या आपल्या समाज बांधवांनी एवढी मेहनत घेऊन जे स्वतः च मीडिया बनवला त्या सर्वांना  सोबत घेऊन त्यांच्या साठी आम्ही मोफत जाहिरात करणार आहेत,नक्की संपर्क साधा धन्यवाद...
+          </marquee>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="name">
               <Form.Label>Name</Form.Label>

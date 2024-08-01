@@ -38,6 +38,7 @@ const MyForm = () => {
       const response = await axios.post('http://localhost:5000/submit-form', user);
       setSuccessMessage('Form submitted successfully!');
       toast.success('Form submitted successfully!');
+      handleReset();
     } catch (error) {
       console.error('Error submitting form:', error);
       setErrorMessage('Failed to submit the form. Please try again.');
@@ -48,7 +49,16 @@ const MyForm = () => {
   };
 
   const handleReset=()=>{
-    setUser('')
+    setUser({
+      fname: '',
+      lname: '',
+      email: '',
+      number: '',
+      gender: '',
+      city: '',
+      taluka: '',
+      village: '',
+    });
   }
 
   return (
@@ -92,6 +102,7 @@ const MyForm = () => {
                 <Form.Control
                   type="email"
                   name="email"
+                   placeholder="ex:- email@gmail.com"
                   value={user.email}
                   onChange={handleInputChange}
                   required
@@ -105,6 +116,7 @@ const MyForm = () => {
                 <Form.Control
                   type="text"
                   name="number"
+                  placeholder='Enter correct mobile number'
                   pattern="[6-9]{1}[0-9]{9}"
                   value={user.number}
                   onChange={handleInputChange}
@@ -198,123 +210,17 @@ const MyForm = () => {
               </Col>
             </Form.Group>
 
+        
             <Form.Group as={Row} controlId="taluka" className="mb-3">
               <Form.Label column sm={4} md={3}>तालुका:</Form.Label>
               <Col sm={8} md={9}>
                 <Form.Control
-                  as="select"
+                  type="text"
                   name="taluka"
+                  placeholder="Enter your taluka"
                   value={user.taluka}
                   onChange={handleInputChange}
-                >
-                 <option value="" selected>तालुका निवडा</option>
-            <option value="जामखेड">जामखेड</option>
-            <option value="कर्जत">कर्जत</option>
-            <option value="श्रीगोंदा">श्रीगोंदा</option>
-            <option value="पारनेर">पारनेर</option>
-            <option value="राहुरी">राहुरी</option>
-            <option value="नगर">नगर</option>
-            <option value="पाथर्डी">पाथर्डी</option>
-            <option value="शेवगाव">शेवगाव</option>
-            <option value="नेवासाशेवगाव">नेवासाशेवगाव</option>
-            <option value="श्रीरामपूर">श्रीरामपूर</option>
-            <option value="संगमनेर">संगमनेर</option>
-            <option value="अकोले">अकोले</option>
-            <option value="बार्शीटाकळी">बार्शीटाकळी</option>
-            <option value="पातूर">पातूर</option>
-            <option value="मुर्तिजापूर">मुर्तिजापूर</option>
-            <option value="अकोला">अकोला</option>
-            <option value="बाळापूर">बाळापूर</option>
-            <option value="अकोट">अकोट</option>
-            <option value="तेल्हारा">तेल्हारा</option>
-            <option value="धामणगाव रेल्वे">धामणगाव रेल्वे</option>
-            <option value="चांदुर रेल्वे">चांदुर रेल्वे</option>
-            <option value="नांदगाव खंडेश्वर">नांदगाव खंडेश्वर</option>
-            <option value="दर्यापूर">दर्यापूर</option>
-            <option value="भातकुली">भातकुली</option>
-            <option value="अमरावती">अमरावती</option>
-            <option value="तिवसा">तिवसा</option>
-            <option value="वरुड">वरुड</option>
-            <option value="मोर्शी">मोर्शी</option>
-            <option value="चांदुर बाजार">चांदुर बाजार</option>
-            <option value="अचलपूर">अचलपूर</option>
-            <option value="अंजनगाव सुर्जी">अंजनगाव सुर्जी</option>
-            <option value="चिखलदरा">चिखलदरा</option>
-            <option value="धारणी">धारणी</option>
-            <option value="अंबेजोगाई">अंबेजोगाई</option>
-            <option value="परळी वैजनाथ">परळी वैजनाथ</option>
-            <option value="धारूर">धारूर</option>
-            <option value="केज">केज</option>
-            <option value="बीड">बीड</option>
-            <option value="वडवणी">वडवणी</option>
-            <option value="माजलगाव">माजलगाव</option>
-            <option value="गेवराई">गेवराई</option>
-            <option value="शिरूर">शिरूर</option>
-            <option value="पाटोदा">पाटोदा</option>
-            <option value="आष्टी">आष्टी</option>
-            <option value="लाखांदूर">लाखांदूर</option>
-            <option value="पवनी">पवनी</option>
-            <option value="लाखनी">लाखनी</option>
-            <option value="साकोली">साकोली</option>
-            <option value="भंडारा">भंडारा</option>
-            <option value="मोहाडी">मोहाडी</option>
-            <option value="तुमसर">तुमसर</option>
-            <option value="लोणार">लोणार</option>
-            <option value="सिंदखेड राजा">सिंदखेड राजा</option>
-            <option value="देउळगाव राजा">देउळगाव राजा</option>
-            <option value="बुलढाणा">बुलढाणा</option>
-            <option value="चिखली">चिखली</option>
-            <option value="मेहकर">मेहकर</option>
-            <option value="खामगाव">खामगाव</option>
-            <option value="मोताळा">मोताळा</option>
-            <option value="मलकापूर">मलकापूर</option>
-            <option value="नांदुरा">नांदुरा</option>
-            <option value="शेगाव">शेगाव</option>
-            <option value="संग्रामपूर">संग्रामपूर</option>
-            <option value="जळगाव जामोद">जळगाव जामोद</option>
-            <option value="पैठण">पैठण</option>
-            <option value="गंगापूर">गंगापूर</option>
-            <option value="वैजापूर">वैजापूर</option>
-            <option value="खुलताबाद">खुलताबाद</option>
-            <option value="छत्रपती संभाजीनगर">छत्रपती संभाजीनगर</option>
-            <option value="फुलंब्री">फुलंब्री</option>
-            <option value="सिल्लोड">सिल्लोड</option>
-            <option value="सोयगाव">सोयगाव</option>
-            <option value="कन्नड">कन्नड</option>
-            <option value="गोंडपिपरी">गोंडपिपरी</option>
-            <option value="राजुरा">राजुरा</option>
-            <option value="जिवती">जिवती</option>
-            <option value="कोरपना">कोरपना</option>
-            <option value="बल्लारपूर">बल्लारपूर</option>
-            <option value="चंद्रपूर">चंद्रपूर</option>
-            <option value="भद्रावती">भद्रावती</option>
-            <option value="पाटण">पाटण</option>
-            <option value="मूळ">मूळ</option>
-            <option value="कुंभारी">कुंभारी</option>
-            <option value="सोलापूर">सोलापूर</option>
-            <option value="पाटण">पाटण</option>
-            <option value="माढा">माढा</option>
-            <option value="सोलापूर ग्रामीण">सोलापूर ग्रामीण</option>
-            <option value="विठोबा">विठोबा</option>
-            <option value="सांगली">सांगली</option>
-            <option value="अक्कलकोट">अक्कलकोट</option>
-            <option value="मिरज">मिरज</option>
-            <option value="करेशा">करेशा</option>
-            <option value="सातारा">सातारा</option>
-            <option value="कऱ्हाड">कऱ्हाड</option>
-            <option value="माझगांव">माझगांव</option>
-            <option value="मलपाण">मलपाण</option>
-            <option value="संगली">संगली</option>
-            <option value="उदगीर">उदगीर</option>
-            <option value="जगन्नाथ">जगन्नाथ</option>
-            <option value="नांदेड">नांदेड</option>
-            <option value="अंबाजोगाई">अंबाजोगाई</option>
-            <option value="उदगीर">उदगीर</option>
-            <option value="लातूर">लातूर</option>
-            <option value="कवठेमहांकाळ">कवठेमहांकाळ</option>
-            <option value="संजयगड">संजयगड</option>
-            <option value="लातूर शहर">लातूर शहर</option>
-                </Form.Control>
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="village" className="mb-3">
