@@ -21,7 +21,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://marathapatilkunbi.onrender.comcontactform", contactForm);
+      await axios.post("https://marathapatilkunbi-com.onrender.com/contactform", contactForm);
       toast.success('धन्यवाद,संपर्क साधल्या बद्दल आम्ही लवकरच यावर आपल्याशी संपर्क करू');
       setContactForm({
         name: "",
