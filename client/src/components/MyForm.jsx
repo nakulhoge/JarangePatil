@@ -35,7 +35,7 @@ const MyForm = () => {
 
     try {
       // Adjust URL if needed
-      const response = await axios.post('http://localhost:5000/submit-form', user);
+      const response = await axios.post('https://marathapatilkunbi-com.onrender.com/submit-form', user);
       setSuccessMessage('Form submitted successfully!');
       toast.success('Form submitted successfully!');
       handleReset();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Image,} from 'react-bootstrap';
 import './Home.css';
 
 

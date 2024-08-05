@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Nav, Button, Carousel, Image } from 'react-bootstrap';
+import { Carousel, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
